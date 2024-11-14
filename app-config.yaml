@@ -1,5 +1,5 @@
 app:
-  title: Scaffolded Backstage App
+  title: Nagarro Backstage
   baseUrl: http://localhost:3000
 
 organization:
@@ -58,11 +58,15 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
-
+  providers:
+    humanitec:
+      # Enable the Humanitec catalog provider
+      enabled: true
+      # Your Humanitec organization ID
+      orgId: ${HUMANITEC_ORG_ID}
 
 humanitec:
   orgId: ${HUMANITEC_ORG_ID}
   token: ${HUMANITEC_TOKEN}
-  cloudProvider: ${CLOUD_PROVIDER}
+  cloudProvider: azure
   githubOrgId: ${GITHUB_ORG_ID}
-  githubOrgName: ${GITHUB_ORG_NAME}
